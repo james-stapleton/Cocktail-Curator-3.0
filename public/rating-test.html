@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="./css/rating.css">
+
+<!-- !  ---------------------------------------------------->
+
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+<!-- !  ---------------------------------------------------->
+
+<title>Cocktail Ratings</title>
+</head>
+<body>
+
+<nav class="navbar">
+  <form class="form-inline">
+    <a href="./Most Viewed Cocktails.html"><button class="btn btn-outline-success" type="button">Most Viewed Cocktails</button></a>
+    <a href="#"><button class="btn btn-outline-success" type="button">Cocktail Rankings</button></a>
+    <a href="./index.html"><h1 class="text-white">Cocktail Curator</h1></a>
+    <a href="./Upload Drink.html"><button class="btn btn-outline-success" type="button">Upload Drink</button></a>
+    <a href="./Login.html"><button class="btn btn-outline-success" type="button">Login</button></a>
+    <a href="./Logout.html"><button class="btn btn-outline-success" type="button">Logout</button></a>
+  </form>
+</nav>
+
+<form class="drink-form">
+  <label for="drinkID">Enter the drink ID</label>
+  <input type="drinkID" id="drinkInput" placeholder="Ex: 1 for old fashioned">
+
+  <label for="userID">Enter User ID</label>
+  <input type="userID" id="userInput" placeholder="Ex 1 for James">
+
+  <div class="stars">
+    <a>⭐</a>
+    <a>⭐</a>
+    <a>⭐</a>
+    <a>⭐</a>
+    <a>⭐</a>
+</div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<!-- !---------------------------------------------------------- -->
+
+<div>
+  <form id="search-form">
+      <label id="search-label" for="search-input">Search for a City:</label>
+      <input id="search-input" class="form-input" placeholder="e.g. Philadelphia"></input>
+      <button class="button">Search</button>
+      <p id="current-temp"></p>
+  </form>
+</div>
+
+<div id="tempText"></div>
+<div id="city-drink-name" class="grid-x grid-margin-x"></div>
+<div id="recipe" class="grid-x grid-margin-x"></div>
+
+
+<script type="x-handlebars-template" id="template">
+  {{data}}
+  
+  <h1>{{this.name}}</h1>
+  <p>{{this.ingredients}}</p>
+  <p>{{this.instructions}}</p>
+
+</script>
+
+<div id="output">
+
+</div>
+
+<!--! Start Ingredient Search ------------------------------------------->
+<div>
+  <form id="search-ingredient-form">
+      <label id="search-ingredient-label" for="search-input">Search by Ingredient:</label>
+      <input id="search-ingredient-input" class="form-input" placeholder="e.g. Vodka"></input>
+      <button class="button">Search</button>
+      <p id="#search-ingrdient"></p>
+  </form>
+</div>
+
+<script type="x-handlebars-template" id="template2">
+  {{#each data}}
+      
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+          <div class="card h-100" style="max-width: 24rem;">
+            <img src="{{this.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-primary">{{this.name}}</h5>
+              <button class="btn btn-primary" type="submit">Recipe</button>
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>
+
+  {{/each}}  
+
+</script>
+
+
+<div id="output2">
+
+</div>
+
+<!-- End Ingredient Search ------------------------------------------>
+
+<div>
+  <form id="name-search">
+      <label for="cocktail-name">Search for cocktail by name</label>
+      <input type="cocktail-name" placeholder="For example 'margarita'">
+      <button class="button">Search</button>
+  </form>
+</div>
+
+
+
+<script src="./js/ratings.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

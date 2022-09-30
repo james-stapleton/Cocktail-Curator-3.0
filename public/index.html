@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="./css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script src="../seeds/cocktailData.js"></script>
+<title>Cocktail Curator</title>
+</head>
+<body>
+
+<nav class="navbar">
+  <form class="form-inline">
+    <a href="./mostViewedCocktails.html"><button class="btn btn-outline-success" type="button">Most Viewed Cocktails</button></a>
+    <a href="./Cocktail Rankings.html"><button class="btn btn-outline-success" type="button">Cocktail Rankings</button></a>
+    <a href="#"><h1 class="text-white">Cocktail Curator</h1></a>
+    <a href="./Upload Drink.html"><button class="btn btn-outline-success" type="button">Upload Drink</button></a>
+    <a href="./Login.html"><button class="btn btn-outline-success" type="button">Login</button></a>
+    <a href="./Logout.html"><button class="btn btn-outline-success" type="button">Logout</button></a>
+  </form>
+</nav>
+<!-- 
+<ul id="drinks">
+</ul>
+
+<div>
+  <form id="saved-drinks-form">
+      <label id="saved-label" for="saved-input">Enter a User ID:</label>
+      <input id="saved-input" class="form-input" placeholder="e.g. 1"></input>
+      <button class="button" id="saved-drinks-btn">Get saved drinks by user ID</button>
+  </form>
+</div> -->
+
+<script id="template" type="text/x-handlebars-template">
+  {{#each cocktailData}}
+  <tr>
+    <td>{{cocktailData.name}}</td>
+    <td>{{cocktailData.ingredients}}</td>
+    <td>{{cocktailData.instructions}}</td>
+  </tr>
+  {{/each}}  
+</script>
+
+
+<!-- card template -->
+
+<!-- <div class="container">
+  <div class="row row-cols-1 row-cols-md-3">
+      <div class="col mb-4">
+        <div class="card h-100" style="max-width: 24rem;">
+          <img src="{{this.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-primary">{{this.name}}</h5>
+            <button class="btn btn-primary" type="submit">Recipe</button>
+          </div>
+        </div>
+      </div>
+</div>
+</div> -->
+
+
+
+<script type="x-handlebars-template" id="template">
+  {{#each cocktailData}}
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+          <div class="card h-100" style="max-width: 24rem;">
+            <img src="./images/{{this.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-primary">{{this.name}}</h5>
+              <a class="btn btn-primary" href="./Recipe.html" role="button">Recipe</a>
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>
+  {{/each}}  
+</script>
+<div id="output">
+
+</div>
+<button onclick="fillTemplate()">
+  Fill Template
+</button>
+
+<script src="./js/scripts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
