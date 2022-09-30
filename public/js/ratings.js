@@ -230,8 +230,25 @@ function getCurrentWeather(city) {
     console.log(filled);
     document.querySelector('#output').innerHTML = filled;
 
+    const card = document.querySelector("#card1");
+
+  card.addEventListener("click", () => {
+    
+
+    let drinkClicked = document.querySelector("#cocktail-name").innerHTML;
+    console.log("This is the drink you clicked", drinkClicked);
+    localStorage.setItem("cocktail", drinkClicked);
+    const drinkFromStroage = localStorage.getItem("cocktail");
+    console.log("Here is the drink returned from localstorage: ", drinkFromStroage);
+  })
+
     })
   }
+
+
+  //!----------------------------------------------------------Event handler for clicking on card
+
+  
 
 //! -----------------------------------------------------------------------------------------------------------
 //  TODO: Implement search by ingredient function
@@ -253,6 +270,17 @@ function getCocktailFromIngredient(ingredientName) {
     console.log("Filled: ", filled);
     console.log(filled);
     document.querySelector('#output2').innerHTML = filled;
+
+    // const eventPropogater = document.querySelectorAll(".container");
+    // eventPropogater.addEventListener("click", function(event) {
+    //   let targetDrink = event.target;
+    //   let targetDrinkName = targetDrink.innerHTML;
+  
+    //   console.log(targetDrinkName);
+    // })
+
+   
+
     });
 }
 
