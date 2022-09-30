@@ -67,9 +67,19 @@
 <script type="x-handlebars-template" id="template">
   {{data}}
   
-  <h1>{{this.name}}</h1>
-  <p>{{this.ingredients}}</p>
-  <p>{{this.instructions}}</p>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+          <div class="card h-100" style="max-width: 24rem;">
+            <img src="{{this.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-primary">{{this.name}}</h5>
+              <button class="btn btn-primary" type="submit">Recipe</button>
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>
 
 </script>
 
@@ -123,7 +133,7 @@
   </form>
 </div>
 
-
+<div id="output3"></div>
 
 <script src="./js/ratings.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>

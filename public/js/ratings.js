@@ -278,13 +278,22 @@ searchNameEl.addEventListener("submit", searchNameSubmit);
 
 function searchNameSubmit(e) {
   e.preventDefault();
+  let drinkUrl = "http://localhost:3001/api/cocktails/name/"
   let drinkInputVal = document.querySelector("#name").value;
-  
+  drinkUrl+= drinkInputVal;
   searchName(drinkUrl);
-  
 }
 
-function searchName(drinkURL) {
-
+function searchName(drinkUrl) {
+  fetch(drinkUrl)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+    const template = Handlebars.compile(document.querySelector("#template").innerHTML);
+    const filled = template(data);
+    console.log(filled);
+    document.querySelector('#output3').innerHTML = filled;
+  })
 }
-
