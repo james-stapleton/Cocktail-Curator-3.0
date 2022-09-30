@@ -278,6 +278,9 @@ searchNameEl.addEventListener("submit", searchNameSubmit);
 
 function searchNameSubmit(e) {
   e.preventDefault();
+  let drinkInputVal = document.querySelector("#name").value;
+  
+  searchName(drinkUrl);
   
 }
 
