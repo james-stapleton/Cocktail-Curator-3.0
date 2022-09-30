@@ -1,7 +1,6 @@
-const { Cocktails } = require('../models');
-function fillTemplate() {
-const data = {
-  cocktailData:[
+const {Cocktails} = require('../models');
+
+const cocktailData = [
   {
     name: 'Old-Fashioned',
     ingredients: '2oz bourbon, .25oz simply syrup, 4 dashes angostura bitters, orange peel',
@@ -141,12 +140,7 @@ const data = {
     image: 'negroni.webp'
   }
 ]
-}
 
-// const seedCocktails = () => Cocktails.bulkCreate(cocktailData);
-const template = Handlebars.compile(document.querySelector("#template").innerHTML);
-const filled = template(data);
-document.querySelector('#output').innerHTML = filled;
-}
+const seedCocktails = () => Cocktails.bulkCreate(cocktailData);
 
 module.exports = seedCocktails;
