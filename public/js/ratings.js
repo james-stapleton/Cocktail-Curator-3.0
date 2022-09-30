@@ -245,12 +245,6 @@ function getCurrentWeather(city) {
     })
   }
 
-
-  //!----------------------------------------------------------Event handler for clicking on card
-
-  
-
-//! -----------------------------------------------------------------------------------------------------------
 //  TODO: Implement search by ingredient function
 
 var searchIngredientEl = document.querySelector("#search-ingredient-form");
@@ -271,16 +265,23 @@ function getCocktailFromIngredient(ingredientName) {
     console.log(filled);
     document.querySelector('#output2').innerHTML = filled;
 
-    // const eventPropogater = document.querySelectorAll(".container");
-    // eventPropogater.addEventListener("click", function(event) {
-    //   let targetDrink = event.target;
-    //   let targetDrinkName = targetDrink.innerHTML;
-  
-    //   console.log(targetDrinkName);
-    // })
-
-   
-
+    //!-----------------------Almost working
+    //selectAll cards with a data-attribute
+    //log them
+    //for each card, set an event listener that waits for a click
+    // then do something?? To link to recipe page
+    // Make the event listener on the button
+    // Then find the sibling
+      const cards = document.querySelectorAll("div[data-attribute]");
+      console.log(cards);
+      cards.forEach((card) => {
+        card.addEventListener("click", function(e) {
+          console.log("Event: ",e)
+          var targetedCard = e.target;
+          console.log(targetedCard); 
+        })
+      })
+//!-------------------------------------------------
     });
 }
 
