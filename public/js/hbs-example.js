@@ -1,6 +1,6 @@
 // This is a sample url for our get route. It lists all the cocktails. 
 
-drinkUrl = `mysql://k2b9b4z58quniyby:h5429diqd42c0tw5@au77784bkjx6ipju.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/nzm6qjcwos6en56p/api/cocktails/`;
+drinkUrl = `/api/cocktails/`;
 
 // If you need to search a cocktail by its name, use:
 // http://localhost:3001/api/cocktails/name/margarita 
