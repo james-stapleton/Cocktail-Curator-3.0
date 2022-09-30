@@ -1,6 +1,6 @@
 // This is a sample url for our get route. It lists all the cocktails. 
 
-drinkUrl = `http://localhost:3001/api/cocktails/`;
+drinkUrl = `${process.env.JAWSDB_URL}/api/cocktails/`;
 
 // If you need to search a cocktail by its name, use:
 // http://localhost:3001/api/cocktails/name/margarita 
