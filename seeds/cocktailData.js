@@ -138,6 +138,66 @@ const cocktailData = [
     ingredients: '1 ounce gin, 1 ounce Campari, 1 ounce sweet vermouth, Garnish: orange peel',
     instructions: 'Add the gin, Campari and sweet vermouth to a mixing glass filled with ice, and stir until well-chilled. Strain into a rocks glass over a large ice cube. Garnish with an orange peel.',
     image: 'negroni.webp'
+  },
+  {
+    name: "Aperol-Spritz",
+    ingredients: '3 ounces prosecco, 2 ounces Aperol, 1 ounce club soda, Garnish: orange slice',
+    instructions: 'Add the prosecco, Aperol and club soda to a wine glass filled with ice and stir. Garnish with an orange slice. ',
+    image: 'aperol-spritz.webp'
+  },
+  {
+    name: "Pina-Colada",
+    ingredients: '2 ounces light rum, 1 1/2 ounces cream of coconut, 1 1/2 ounces pineapple juice, 1/2 ounce lime juice, freshly squeezed, Garnish: pineapple wedge, Garnish: pineapple leaf',
+    instructions: 'Add the rum, cream of coconut and pineapple and lime juices to a shaker with ice and shake vigorously for 20 to 30 seconds. Strain into a chilled Hurricane glass over pebble ice. Garnish with a pineapple wedge and pineapple leaf.',
+    image: 'pina-colada.webp'
+  },
+  {
+    name: "White-Wine-Sangria",
+    ingredients: '1 bottle dry white wine (such as pinot grigio or chenin blanc), chilled, 4 ounces Lillet blanc, 1 medium peach, pitted and sliced, 1 green apple, cored and sliced, 1 lemon, cut into wedges, 3 mint sprigs, Club soda, chilled, to top (optional)',
+    instructions: 'Add wine, Lillet, fruit and mint into a pitcher and stir to combine. Chill for up to four hours. Divide between 4 to 6 wine goblets and top with club soda, if desired.',
+    image: 'white-wine-sangria.webp'
+  },
+  {
+    name: "Mint-Julep",
+    ingredients: '8 mint leaves, 1/4 ounce simple syrup, 2 ounces bourbon, Garnish: mint sprig, Garnish: Angostura bitters (optional)',
+    instructions: 'In a Julep cup or rocks glass, lightly muddle the mint leaves in the simple syrup. Add the bourbon then pack the glass tightly with crushed ice. Stir until the cup is frosted on the outside. Top with more crushed ice to form an ice dome, and garnish with a mint sprig and a few drops of bitters (optional).',
+    image: 'mint-julep.webp'
+  },
+  {
+    name: "Rum-Punch",
+    ingredients: '1 1/4 ounces light rum, 1 1/4 ounces dark rum, 2 ounces pineapple juice 1 ounce orange juice, freshly squeezed, 1/4 ounce lime juice, freshly squeezed, 1/4 ounce grenadine, Garnish: brandied or maraschino cherry',
+    instructions: 'Add light rum, dark rum, pineapple, orange and lime juices, and grenadine into a shaker with ice, and shake until well-chilled. Strain into a Hurricane glass over fresh ice. Garnish with a maraschino or brandied cherry.',
+    image: 'rum-punch.webp'
+  },
+  {
+    name: "Boulevardier",
+    ingredients: '1 1/4 ounces bourbon (or rye), 1 ounce Campari, 1 ounce sweet vermouth, Garnish: orange twist',
+    instructions: 'Add bourbon, Campari and sweet vermouth into a mixing glass with ice and stir until well-chilled. Strain into a rocks glass over fresh ice. Garnish with an orange twist.',
+    image: 'boulevardier.webp'
+  },
+  {
+    name: "Hot-Toddy",
+    ingredients: 'Boiling water, to fill a mug, 4 cloves, 1 lemon peel or wheel, 2 teaspoons demerara sugar or brown sugar, 1/4 ounce lemon juice, freshly squeezed, 2 ounces whiskey (bourbon, rye, Irish or scotch)',
+    instructions: 'Fill a mug with boiling water and let stand for a minute or two to warm. Meanwhile, stick the cloves into the lemon peel or wheel and set aside. Empty the mug and fill about halfway with fresh boiling water. Add the sugar and stir to dissolve. Add the prepared lemon peel or wheel and stir. Add the lemon juice and whiskey, and stir again.',
+    image: 'hot-toddy.webp'
+  },
+  {
+    name: "Mulled-Wine",
+    ingredients: '1 bottle fruity red wine (such as beaujolais or syrah), 4 ounces bourbon or brandy, 2 teaspoons sugar, 4 star anise pods, 2 long strips lemon peel or orange peel, Garnish: 6 cinnamon sticks',
+    instructions: 'Add the red wine, bourbon or brandy, sugar, star anise pods and lemon or orange peels into a small saucepan, and heat over low heat until warm, but do not allow to boil. Remove from heat and let stand for 5 to 10 minutes. Divide between six mugs or punch cups. Garnish each drink with a cinnamon stick.',
+    image: 'mulled-wine.webp'
+  },
+  {
+    name: "Eggnog",
+    ingredients: '2 large eggs, 3 ounces superfine sugar, 3 ounces brandy, 2 ounces Sailor Jerry spiced rum, 3/4 cup whole milk, 1/2 cup heavy cream, Gatrnish: nutmeg, freshly grated',
+    instructions: 'Beat the eggs in a blender for 1 minute on medium speed. Slowly add the sugar and blend for 1 minute. With the blender still running, add the brandy, rum, milk and heavy cream and blend until combined. Transfer to a container and chill thoroughly to allow the flavors to combine. Serve in a chilled coupe or wine glass. Garnish with freshly grated nutmeg.',
+    image: 'eggnog.webp'
+  },
+  {
+    name: "Mudslide",
+    ingredients: '1 ounce vodka, 1 ounce coffee liqueur, 1 ounce Baileys Irish cream, 1 1/2 ounces heavy cream, Garnish: chocolate shavings',
+    instructions: 'Add the vodka, coffee liqueur, Baileys and cream to a shaker with ice and shake until well-chilled. Strain into a chilled fizz glass or coupe. Garnish with freshly shaved chocolate.',
+    image: 'mudslide.webp'
   }
 ]
 
