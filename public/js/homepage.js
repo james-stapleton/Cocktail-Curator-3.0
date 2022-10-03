@@ -92,7 +92,7 @@ function getCurrentWeather(city) {
         "tom-collins",
         "rum-punch",
         "sazerac",
-        "martini",
+        "dry-martini",
         "whiskey-sour",
         "sidecar",
       ];

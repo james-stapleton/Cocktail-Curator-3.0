@@ -11,13 +11,15 @@ function displayRatings(drinkUrl) {
         const drinksObject = {data: drinksArray};
         console.log(drinksObject);
         const template = Handlebars.compile(`{{#each data}}
+        {{#if this.user_cocktails.saved}}
       
         <div id = "{{this.name}}">
         <p id = "{{this.name}}">{{this.name}} <br>
         <img id = "{{this.name}}" src="/static/{{this.image}}" class="card-img-top" alt="{{this.image}}">
         </p>
        </div>
-       
+    <button id="{{this.id}}">Unsave</button>
+{{/if}}
          {{/each}}  `);
         console.log("template: ",template);
         const filled = template(drinksObject);
@@ -36,9 +38,33 @@ function displayRatings(drinkUrl) {
                 window.location.href = serverUrl;
             })
         } )
+        const deleteButtons = document.querySelectorAll("button");
+        deleteButtons.forEach((btn) => {
+            btn.addEventListener("click", function(e) {
+                const userID = localStorage.getItem("user_id");
+                cocktailID = e.target.id;
+                const body = {
+                    userId: userID,
+                    cocktailId: cocktailID,
+                    saved: 0
+                  }
+                  console.log(body);
+                  const upload = JSON.stringify(body);
+                  const postOptions = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json; charset=UTF-8",
+                    },
+                    body: upload
+                }
+                fetch("/api/usercocktails", postOptions)
+                .then(() => {
+                    console.log("Drink unsaved");
+                });
+            } )
+            
+        })
     })
 }
 
 displayRatings(drinkUrl);
-
-console.log("display drinks");
