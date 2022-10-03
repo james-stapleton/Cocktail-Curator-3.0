@@ -6,7 +6,7 @@ const { Users, Cocktails, UserCocktails } = require('../../models');
 // User get methods
 router.get('/', async (req,res) => {
     try {
-        const userData = await Users.findAll({include: Cocktails, through: UserCocktails});
+        const userData = await Users.findAll({include: Cocktails, through: UserCocktails}, {where: saved = true} );
         res.status(200).json(userData);
     } catch (err) {
         res.status(500).json(err);
@@ -15,7 +15,7 @@ router.get('/', async (req,res) => {
 
 router.get('/:id', async (req,res) => {
     try {
-        const userData = await Users.findByPk( req.params.id, {include: Cocktails, through: UserCocktails } );
+        const userData = await Users.findByPk( req.params.id, {include: Cocktails, through: UserCocktails }, {where: saved = true} );
         res.status(200).json(userData);
     } catch (err) {
         res.status(500).json(err);
