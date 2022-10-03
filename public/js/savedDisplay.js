@@ -17,6 +17,7 @@ function displayRatings(drinkUrl) {
         <img id = "{{this.name}}" src="/static/{{this.image}}" class="card-img-top" alt="{{this.image}}">
         </p>
        </div>
+       
          {{/each}}  `);
         console.log("template: ",template);
         const filled = template(drinksObject);
