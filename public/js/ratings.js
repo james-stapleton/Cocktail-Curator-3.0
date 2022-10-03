@@ -3,6 +3,14 @@ const starWrapper = document.querySelector(".stars");
 const form = document.querySelector(".drink-form");
 var starIndex;
 
+
+
+
+
+
+
+
+
 function handleFormSubmit(event) {
     event.preventDefault();
     var userId = document.querySelector("#userInput").value;
@@ -265,10 +273,17 @@ function getCocktailFromIngredient(ingredientName) {
     console.log(filled);
     document.querySelector('#output2').innerHTML = filled;
 
+
+    // ! New Attempt using onclick from html ------------------------------
+    
+    // function redirectRecipe(id) {
+    //   console.log("Clicked id is ", id);
+    // }
+
     //!-----------------------Almost working
-    //selectAll cards with a data-attribute
-    //log them
-    //for each card, set an event listener that waits for a click
+    // selectAll cards with a data-attribute
+    // log them
+    // for each card, set an event listener that waits for a click
     // then do something?? To link to recipe page
     // Make the event listener on the button
     // Then find the sibling
@@ -277,8 +292,12 @@ function getCocktailFromIngredient(ingredientName) {
       cards.forEach((card) => {
         card.addEventListener("click", function(e) {
           console.log("Event: ",e)
-          var targetedCard = e.target;
+          var targetedCard = e.target.id;
           console.log(targetedCard); 
+          // new route!! We captured the id, so make a get route that loads a new page with the cocktail name (formatted correctly) as a paramter
+          let serverUrl = "http://localhost:3001/recipe/";
+          serverUrl += targetedCard;
+          window.location.href = serverUrl;
         })
       })
 //!-------------------------------------------------

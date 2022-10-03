@@ -1,13 +1,27 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { Users, Cocktails, UserCocktails } = require('../../models');
 const User = require('../../models/Users');
 
 router.get('/', async (req, res) => {
     try {
-        const joinData = await UserCocktails.findAll();
-        res.status(200).json(joinData);
+        const [results, metadata] = await sequelize.query("SELECT cocktails.name, AVG(user_cocktails.rating) AS 'Rating' FROM cocktails JOIN user_cocktails ON cocktails.id = user_cocktails.cocktail_id WHERE user_cocktails.rating IS NOT NULL GROUP BY user_cocktails.cocktail_id ORDER BY AVG(rating) DESC;");
+
+        console.log("results ",results);
+        res.status(200).json(results);
     } catch (err) {
         res.status(500).json(err);
+    }
+});
+
+router.get('/ratings', async (req,res) => {
+    console.log("Hello I am here")
+    try {
+
+        console.log("results ",results);
+        res.status(200).json(results);
+    } catch (err) {
+        res.json(err);
     }
 });
 
@@ -15,7 +29,7 @@ router.get('/', async (req, res) => {
 // requires userId and cocktailID
 router.post('/', async (req,res) => {
     try {
-        const createData = await UserCocktails.create(req.body);
+        const createData = await UserCocktails.upsert(req.body);
         res.status(200).json(createData);
     } catch (err) {
         res.status(500).json(err);

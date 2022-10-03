@@ -6,22 +6,14 @@ const Users = require('./Users');
 class UserCocktails extends Model {} 
     UserCocktails.init (
         {
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: Users,
-        //         key: "id"
-        //     }
-        // },
-        // cocktail_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: Cocktails,
-        //         key: "id"
-        //     }
-        // }
+            saved: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false,
+                allowNull: true
+            },
+            rating: {
+                type: DataTypes.INTEGER,
+            }
     },
     {
         timestamps: false,

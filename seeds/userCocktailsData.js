@@ -3,19 +3,26 @@ const { UserCocktails, Cocktails } = require('../models');
 const userCocktailsData = [
     {
         userId: 1,
-        cocktailId: 1
+        cocktailId: 1, 
+        rating: 10,
+        saved: true
     },
     {
         userId: 1,
-        cocktailId: 2
+        cocktailId: 2,
+        rating: 10,
+        saved: true
     },
     {
         userId: 2,
-        cocktailId: 1
+        cocktailId: 1,
+        rating: 8,
     },
     {
         userId: 3,
-        cocktailId: 2
+        cocktailId: 2,
+        rating: 8,
+        saved: true
     },
 ];
 
