@@ -9,7 +9,7 @@ const postOptions = {
   },
 };
 
-fetch(`http://localhost:3001/api/viewed/${cocktail}`, postOptions)
+fetch(`/api/viewed/${cocktail}`, postOptions)
 .then( () => {
   console.log(`${cocktail} views incremented`);
 });
@@ -34,7 +34,7 @@ console.log(cocktailID);
     },
     body: upload
 }
-fetch("http://localhost:3001/api/usercocktails", postOptions)
+fetch("/api/usercocktails", postOptions)
 .then(() => {
     console.log("Thank you for saving a new drink!");
 });
@@ -89,7 +89,7 @@ function submitRating(starIndex) {
       },
       body: upload
   }
-  fetch("http://localhost:3001/api/usercocktails", postOptions)
+  fetch("/api/usercocktails", postOptions)
   .then(() => {
       console.log("Thank you for rating this drink!");
   });

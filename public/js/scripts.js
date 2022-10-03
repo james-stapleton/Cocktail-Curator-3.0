@@ -2,7 +2,7 @@ var drinkList = document.querySelector("#drinks");
 var savedDrinksButton = document.querySelector('#saved-drinks-btn');
 var savedFormEl = document.querySelector('#saved-drinks-form');
 
-fetch("http://localhost:3001/api/cocktails")
+fetch("/api/cocktails")
   .then(function (response) {
     return response.json();
   })
@@ -44,7 +44,7 @@ savedFormEl.addEventListener("submit", handleSavedFormSubmit);
   // Grab user ID from the form, append it to the api url and make a fetch request
   function getSavedDrinks(userID) {
     console.log(userID);
-    fetch(`http://localhost:3001/api/users/${userID}`)
+    fetch(`/api/users/${userID}`)
     .then((response) => {
        return response.json();
     })

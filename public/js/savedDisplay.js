@@ -1,4 +1,4 @@
-drinkUrl = `http://localhost:3001/api/users/1`;
+drinkUrl = `/api/users/1`;
 
 function displayRatings(drinkUrl) {
     fetch(drinkUrl)
@@ -30,7 +30,7 @@ function displayRatings(drinkUrl) {
             drink.addEventListener("click", function(e) {
                 var targetedDrink = e.target.id;
                 console.log(targetedDrink);
-                let serverUrl = "http://localhost:3001/recipe/";
+                let serverUrl = "/recipe/";
                 serverUrl += targetedDrink;
                 window.location.href = serverUrl;
             })
