@@ -65,11 +65,11 @@ function getCurrentWeather(city) {
         "margarita",
         "mojito",
         "aperol_spritz",
-        "pina_colada",
+        "pina-colada",
         "daiquiri",
         "paloma",
-        "white_wine_sangria",
-        "mint_julep",
+        "white-wine_sangria",
+        "mint-julep",
       ];
       //randomly generate the index then select the drink
       drinkIndex = Math.floor(Math.random() * drinksArray.length);
@@ -88,9 +88,9 @@ function getCurrentWeather(city) {
       tempText.appendChild(weatherDrink);
     } else if (currentTemp > 60 && currentTemp <= 85) {
       drinksArray = [
-        "moscow_mule",
-        "tom_collins",
-        "rum_punch",
+        "moscow-mule",
+        "tom-collins",
+        "rum-punch",
         "sazerac",
         "martini",
         "whiskey_sour",
@@ -111,7 +111,7 @@ function getCurrentWeather(city) {
       tempText.appendChild(weatherDrink);
     } else if (currentTemp > 40 && currentTemp <= 60) {
       drinksArray = [
-        "old_fashioned",
+        "old-fashioned",
         "manhattan",
         "martinez",
         "negroni",
@@ -136,8 +136,8 @@ function getCurrentWeather(city) {
       tempText.appendChild(weatherDrink);
     } else {
       drinksArray = [
-        "irish_coffee",
-        "hot_toddy",
+        "irish-coffee",
+        "hot-toddy",
         "mulled_wine",
         "eggnog",
         "mudslide",
