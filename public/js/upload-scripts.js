@@ -31,7 +31,7 @@ function createNewDrink(newDrink) {
 
   console.log(postOptions);
 
-  fetch("http://localhost:3001/api/cocktails", postOptions).then(() => {
+  fetch("/api/cocktails", postOptions).then(() => {
     console.log("Thank you for submitting a new cocktail to our database!");
   });
 }

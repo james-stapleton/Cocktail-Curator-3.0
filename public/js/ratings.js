@@ -59,7 +59,7 @@ function postRating(userId, cocktailId, rating) {
         },
         body: upload
     }
-    fetch("http://localhost:3001/api/ratings", postOptions)
+    fetch("/api/ratings", postOptions)
     .then(() => {
         console.log("Thank you for submitting your rating!");
     });
@@ -121,7 +121,7 @@ function getCurrentWeather(city) {
     var drinksArray = []; //empty array that will be filled with curated drink suggestions
     var drinkIndex; //index variable that will be randomly assigned to select a drink from the array
     var drink = ""; //empty string that will be given the name of a drink from the array
-    var drinkURL = `http://localhost:3001/api/cocktails/name/`;
+    var drinkURL = `/api/cocktails/name/`;
     tempText.innerHTML = "";
     console.log("Current drink is: " + currentDrink);
   
@@ -259,7 +259,7 @@ var searchIngredientEl = document.querySelector("#search-ingredient-form");
 
 function getCocktailFromIngredient(ingredientName) {
   fetch(
-    "http://localhost:3001/api/cocktails/ing/" + ingredientName
+    "/api/cocktails/ing/" + ingredientName
   )
     .then(function (response) {
       return response.json();
@@ -295,7 +295,7 @@ function getCocktailFromIngredient(ingredientName) {
           var targetedCard = e.target.id;
           console.log(targetedCard); 
           // new route!! We captured the id, so make a get route that loads a new page with the cocktail name (formatted correctly) as a paramter
-          let serverUrl = "http://localhost:3001/recipe/";
+          let serverUrl = "/recipe/";
           serverUrl += targetedCard;
           window.location.href = serverUrl;
         })
@@ -326,7 +326,7 @@ searchNameEl.addEventListener("submit", searchNameSubmit);
 
 function searchNameSubmit(e) {
   e.preventDefault();
-  let drinkUrl = "http://localhost:3001/api/cocktails/name/"
+  let drinkUrl = "/api/cocktails/name/"
   let drinkInputVal = document.querySelector("#name").value;
   drinkUrl+= drinkInputVal;
   searchName(drinkUrl);

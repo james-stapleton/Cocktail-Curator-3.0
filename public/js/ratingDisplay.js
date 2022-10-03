@@ -1,5 +1,5 @@
 // const template = document.querySelector("#template")
-drinkUrl = `http://localhost:3001/api/usercocktails/`;
+drinkUrl = `/api/usercocktails/`;
 
 function displayRatings(drinkUrl) {
     fetch(drinkUrl)
@@ -25,7 +25,7 @@ function displayRatings(drinkUrl) {
             drink.addEventListener("click", function(e) {
                 var targetedDrink = e.target.id;
                 console.log(targetedDrink);
-                let serverUrl = "http://localhost:3001/recipe/";
+                let serverUrl = "/recipe/";
                 serverUrl += targetedDrink;
                 window.location.href = serverUrl;
             })
