@@ -64,11 +64,11 @@ function getCurrentWeather(city) {
       drinksArray = [
         "margarita",
         "mojito",
-        "aperol_spritz",
+        "aperol-spritz",
         "pina-colada",
         "daiquiri",
         "paloma",
-        "white-wine_sangria",
+        "white-wine-sangria",
         "mint-julep",
       ];
       //randomly generate the index then select the drink
@@ -93,7 +93,7 @@ function getCurrentWeather(city) {
         "rum-punch",
         "sazerac",
         "martini",
-        "whiskey_sour",
+        "whiskey-sour",
         "sidecar",
       ];
       drinkIndex = Math.floor(Math.random() * drinksArray.length);
@@ -138,7 +138,7 @@ function getCurrentWeather(city) {
       drinksArray = [
         "irish-coffee",
         "hot-toddy",
-        "mulled_wine",
+        "mulled-wine",
         "eggnog",
         "mudslide",
       ];
