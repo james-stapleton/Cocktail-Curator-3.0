@@ -1,8 +1,6 @@
-// TODO
-
 const router = require('express').Router();
 
-const userRoutes = require('./user-routes');
+const userRoutes = require('./userRoutes');
 const cocktailRoutes = require('./cocktail-routes');
 const userCocktailRoutes = require('./join-table-routes');
 const ratingsRoutes = require('./ratings-routes');

@@ -160,16 +160,31 @@ function getCurrentWeather(city) {
   }
 
   function displayDrink(drinkUrl) {
-    console.log(drinkUrl);
+    console.log("This is the drink URL: ",drinkUrl);
     fetch(drinkUrl)
     .then((response) => {
         return response.json();
     })
     .then((data) => {
-        console.log(data);
-        const template = Handlebars.compile(document.querySelector("#template").innerHTML);
+        console.log("This is the data :",data);
+        const template = Handlebars.compile(`{{data}}
+  
+          <div id="card1" class="container">
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col mb-4">
+                  <div class="card h-100" style="max-width: 24rem;">
+                    <img src="./images/{{this.image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 id="cocktail-name" class="card-title text-primary">{{this.name}}</h5>
+                      <button id = "{{this.name}}" class="btn btn-primary" type="submit">Recipe</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          </div>`);
+        console.log("This is the template", template);
     const filled = template(data);
-    console.log(filled);
+    console.log("This is the filled template: ",filled);
     document.querySelector('#output').innerHTML = filled;
 
     const card = document.querySelector("#card1");
@@ -206,7 +221,23 @@ function getCocktailFromIngredient(ingredientName) {
     .then(function (data) {
       console.log(data);
       const dataObject = {data: data};
-        const template = Handlebars.compile(document.querySelector("#template2").innerHTML);
+        const template = Handlebars.compile(`{{#each data}}
+      
+          <div data-attribute = "{{this.id}}" class="container">
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col mb-4">
+                  <div class="card h-100" style="max-width: 24rem;">
+                    <img src="./images/{{this.image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 id="cocktail-name" class="card-title text-primary">{{this.name}}</h5>
+                      <button id = "{{this.name}}" onclick = "redirectRecipe(this.id)" class="btn btn-primary" type="submit">Recipe</button>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          </div>
+        
+          {{/each}}` );
     const filled = template(dataObject);
     console.log("Filled: ", filled);
     console.log(filled);
@@ -278,7 +309,21 @@ function searchName(drinkUrl) {
   })
   .then((data) => {
     console.log(data);
-    const template = Handlebars.compile(document.querySelector("#template").innerHTML);
+    const template = Handlebars.compile(`{{data}}
+  
+    <div id="card1" class="container">
+      <div class="row row-cols-1 row-cols-md-3">
+          <div class="col mb-4">
+            <div class="card h-100" style="max-width: 24rem;">
+              <img src="./images/{{this.image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 id="cocktail-name" class="card-title text-primary">{{this.name}}</h5>
+                <button id = "{{this.name}}" class="btn btn-primary" type="submit">Recipe</button>
+              </div>
+            </div>
+          </div>
+    </div>
+    </div>`);
     const filled = template(data);
     console.log(filled);
     document.querySelector('#output3').innerHTML = filled;

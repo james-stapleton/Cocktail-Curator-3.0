@@ -1,4 +1,17 @@
-drinkUrl = `/api/users/1`;
+const userID = document.querySelector("div[data-attribute]").id;
+console.log("User id: ", userID)
+
+fetch(`http://localhost:3001/api/users/${userID}`)
+.then ((response) => {
+    return response.json;
+})
+.then ((data) => {
+    console.log("This is my user: ",data)
+    // const name = data.name;
+    // console.log(name);
+})
+
+drinkUrl = `/api/users/${userID}`;
 
 function displayRatings(drinkUrl) {
     fetch(drinkUrl)
@@ -7,6 +20,8 @@ function displayRatings(drinkUrl) {
     })
     .then((data) => {
         console.log(data);
+        document.querySelector("div[data-attribute]").textContent = `Saved drinks for ${data.name}`;
+
         const drinksArray = data.cocktails;
         const drinksObject = {data: drinksArray};
         console.log(drinksObject);
@@ -41,7 +56,7 @@ function displayRatings(drinkUrl) {
         const deleteButtons = document.querySelectorAll("button");
         deleteButtons.forEach((btn) => {
             btn.addEventListener("click", function(e) {
-                const userID = localStorage.getItem("user_id");
+                const userID = document.querySelector("div[data-attribute]").id;
                 cocktailID = e.target.id;
                 const body = {
                     userId: userID,
@@ -59,7 +74,7 @@ function displayRatings(drinkUrl) {
                 }
                 fetch("/api/usercocktails", postOptions)
                 .then(() => {
-                    console.log("Drink unsaved");
+                    console.log(`Drink ${cocktailID} unsaved`);
                 });
             } )
             
